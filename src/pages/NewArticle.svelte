@@ -1,7 +1,7 @@
 <script>
-  import NavBar from '/home/dmacs/Desktop/front_end/src/components/NavBar.svelte';
+  import NavBar from '/home/dmacs/Desktop/FrontEnd/src/components/NavBar.svelte';
   import { ethers } from 'ethers';
-  import { abi, address } from '/home/dmacs/Desktop/front_end/src/Miracle.js';
+  import { abi, address } from '/home/dmacs/Desktop/FrontEnd/src/Miracle.js';
   import { create } from 'ipfs-http-client';
   import { escape } from 'svelte/internal';
   

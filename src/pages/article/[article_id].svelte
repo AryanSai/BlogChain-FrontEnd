@@ -2,7 +2,7 @@
   import { params } from "@roxi/routify"
   import { onMount } from 'svelte';
   import { ethers } from 'ethers';
-  import { abi, address } from '/home/dmacs/Desktop/front_end/src/Miracle';
+  import { abi, address } from '/home/dmacs/Desktop/FrontEnd/src/Miracle';
   import NavBar from "../../components/NavBar.svelte";
 
   let final_cid;
