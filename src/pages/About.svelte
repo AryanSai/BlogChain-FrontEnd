@@ -51,9 +51,9 @@
   
   <div class="flip-card">
       <div class="flip-card-inner">
-        <div class="flip-card-front">
+        <!-- <div class="flip-card-front">
           <img src="/home/dmacs/Desktop/front_end/src/images/m.jpeg" alt="Pic" style="width:300px;height:300px;">
-        </div>
+        </div> -->
         <div class="flip-card-back">
           <h1>Aryan Sai</h1> 
           <p></p> 

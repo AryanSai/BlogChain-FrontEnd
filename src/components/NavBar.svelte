@@ -27,7 +27,7 @@
   }
 </style>
 
-<h1 text-align:center>Perspective</h1>
+<h1 text-align:center>Blogchain</h1>
 
 <div class="navbar">
   <a class="button" href="/index">Home</a> 

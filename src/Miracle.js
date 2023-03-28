@@ -1,31 +1,5 @@
 export const abi=[
   {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint8",
-        "name": "id",
-        "type": "uint8"
-      }
-    ],
-    "name": "ArticlePublished",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
-        "internalType": "uint8",
-        "name": "id",
-        "type": "uint8"
-      }
-    ],
-    "name": "ArticleTipped",
-    "type": "event"
-  },
-  {
     "inputs": [],
     "name": "articleIdCounter",
     "outputs": [
@@ -147,6 +121,11 @@ export const abi=[
         "internalType": "uint256",
         "name": "_id",
         "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
       }
     ],
     "name": "tipWriter",
@@ -155,4 +134,4 @@ export const abi=[
     "type": "function"
   }
 ]
-export const address = "0x08c17aD95ec86Bb8d02cb36dfa8f3fE7EAa5fBCE";
+export const address = "0x887dc58eA184F9739344BF9aa1C2deb5935d5763";

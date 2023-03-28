@@ -12,11 +12,9 @@
       const client = create({url:"http://127.0.0.1:5001/api/v0"})
       const title = document.getElementById("title").value
       const articleBody = onProcess()
-      //alert(articleBody)
-      //const cid = await client.add('{"Title":"Trial post","Text":"adasdsaaaa"}')🦊
+      //alert(articleBody)🦊
       const cid = await client.add(escape('{"Title":"'+title+'","Text":"'+ articleBody +'"}'))
-      //const cid = await client.add('{"Title":"'+title+'","Text":"'+ articleBody +'"}')
-      //const tokenuri = await client.add(escape('{"Title":"'+title+'","IPFS Link": https://ipfs.io/ipfs/'+ cid +'"}'))
+      const tokenuri = await client.add(escape('{"Title": "'+title+'","CID": '+ cid +'"}'))
       return cid
   }
 
@@ -37,13 +35,13 @@
     await window.ethereum.request({ method: 'eth_requestAccounts' })
     //getting the cid
     const title = document.getElementById("title").value
+
     //alert('publish function')
     ipfs().then(async (data)=>{
       fcid = data.path
       const signer = provider.getSigner()
       const contract = new ethers.Contract(address, abi, signer);
-      //alert("CId"+fcid)
-      await contract.publishArticle(fcid,title);       
+      await contract.publishArticle(fcid,title); 
     }); 
   }
 </script>
@@ -114,7 +112,7 @@
         <input type="text" id="title" name="Title">
        <p><label for="articleBody">Type your arcticle here: </label></p>
     </center>
-    <textarea id="articleBody" name="articleBody" rows="10" cols="152%"> </textarea>
+    <textarea id="articleBody" name="articleBody" placeholder="Write a comment" rows="8" cols="152%"> </textarea>
 </form>
 
 <center>
