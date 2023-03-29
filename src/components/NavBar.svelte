@@ -30,7 +30,7 @@
 <h1 text-align:center>Blogchain</h1>
 
 <div class="navbar">
-  <a class="button" href="/index">Home</a> 
+  <a class="button" href="/Home">Home</a> 
   <a class="button" href="/NewArticle">New Article</a> 
   <a class="button" href="/About">About</a>
 </div>

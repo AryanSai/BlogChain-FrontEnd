@@ -2,30 +2,30 @@
   import { params } from "@roxi/routify"
   import { onMount } from 'svelte';
   import { ethers } from 'ethers';
-  import { abi as miracleAbi, address as miracleAddress } from '/home/dmacs/Desktop/FrontEnd/src/Miracle.js';
-  import { abi as miracleTokenAbi, address as miracleTokenAddress } from '/home/dmacs/Desktop/FrontEnd/src/MiracleToken.js';
+  import { abi as blogchainAbi, address as blogchainAddress } from '../../BlogChain.js';
+  import { abi as blogTokenAbi, address as blogTokenAddress } from '../../BlogToken.js';
   import NavBar from "../../components/NavBar.svelte";
   
-  let final_cid;
   let title = "title"
   let body="body"
   let writer ="writer"
   let tipAmount = 0
   let data = 0
-  
+  let uri = 0
+
   onMount(async () => {
     const articleId = $params.article_id;
     const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const miraclecontract = new ethers.Contract(miracleAddress, miracleAbi, provider);
-    data = await miraclecontract.mapGetter(articleId);
-    final_cid = data.cid
+    const blogchaincontract = new ethers.Contract(blogchainAddress, blogchainAbi, provider);
+    data = await blogchaincontract.mapGetter(articleId);
+    uri = await blogchaincontract.tokenURI(articleId);
     writer = data.writer
     tipAmount = data.tipAmount
     sairam()
 	});
 
   async function get(){
-    const data =  await fetch('http://127.0.0.1:5001/api/v0/cat?arg='+final_cid,{method: 'POST'});
+    const data =  await fetch('http://127.0.0.1:5001/api/v0/cat?arg='+uri,{method: 'POST'});
     const json = await data.json()
     return json;
   }
@@ -48,18 +48,17 @@
     await window.ethereum.request({ method: 'eth_requestAccounts' })
     const provider1 = new ethers.providers.Web3Provider(window.ethereum);
     const signer1 = provider1.getSigner()
-    const miraclecontract = new ethers.Contract(miracleAddress, miracleAbi, signer1);
+    const blogchaincontract = new ethers.Contract(blogchainAddress, blogchainAbi, signer1);
 
-    const tokencontract = new ethers.Contract(miracleTokenAddress, miracleTokenAbi, signer1);
+    const tokencontract = new ethers.Contract(blogTokenAddress, blogTokenAbi, signer1);
 
     const tipAmount = document.getElementById("tipAmount").value
-    alert(tipAmount)
 
     if(IsNumeric(tipAmount)){
       //transfer the amount with token contract
       await tokencontract.transfer(writer,tipAmount)
       //modify the tip amount in mirale contract
-      await miraclecontract.tipWriter(articleId,tipAmount);
+      await blogchaincontract.tipWriter(articleId,tipAmount);
       showTips()
       alert("Successfully transferred the tip amount!!")  
     }else{
@@ -70,8 +69,8 @@
   async function showTips(){
     const articleId = $params.article_id;
     const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const miraclecontract = new ethers.Contract(miracleAddress, miracleAbi, provider);
-    data = await miraclecontract.mapGetter(articleId);
+    const blogchaincontract = new ethers.Contract(blogchainAddress, blogchainAbi, provider);
+    data = await blogchaincontract.mapGetter(articleId);
     tipAmount = data.tipAmount
   }
 </script>
@@ -143,11 +142,9 @@
   
   <br>
   <br>
-  <h5>Tips Earnt: {tipAmount} MRCLTK </h5>
+  <h5>Tips Earnt: {tipAmount} BLOG Tokens</h5>
   <h5>Do you like to support the writer?</h5>
   <input id="tipAmount" type="tipAmount" placeholder="Enter the amount" onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
   
   <button class="button" on:click={tipWriter}><span>Tip</span></button>
-
-
 </center>

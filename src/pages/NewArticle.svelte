@@ -1,7 +1,7 @@
 <script>
   import NavBar from '/home/dmacs/Desktop/FrontEnd/src/components/NavBar.svelte';
   import { ethers } from 'ethers';
-  import { abi, address } from '/home/dmacs/Desktop/FrontEnd/src/Miracle.js';
+  import { abi, address } from '../BlogChain.js';
   import { create } from 'ipfs-http-client';
   import { escape } from 'svelte/internal';
   
@@ -12,9 +12,8 @@
       const client = create({url:"http://127.0.0.1:5001/api/v0"})
       const title = document.getElementById("title").value
       const articleBody = onProcess()
-      //alert(articleBody)🦊
+      //alert(articleBody)
       const cid = await client.add(escape('{"Title":"'+title+'","Text":"'+ articleBody +'"}'))
-      const tokenuri = await client.add(escape('{"Title": "'+title+'","CID": '+ cid +'"}'))
       return cid
   }
 
@@ -36,7 +35,6 @@
     //getting the cid
     const title = document.getElementById("title").value
 
-    //alert('publish function')
     ipfs().then(async (data)=>{
       fcid = data.path
       const signer = provider.getSigner()
@@ -116,5 +114,5 @@
 </form>
 
 <center>
-  <button class="button" on:click={publish}><span>Publish</span></button>
+  <button class="button" on:click={publish}><span>Mint</span></button>
 </center>

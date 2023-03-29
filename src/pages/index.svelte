@@ -1,8 +1,8 @@
 <script>
-    import { metatags } from '@roxi/routify';
-    import Home from './Home.svelte';
-    metatags.title = 'Miracle'
-    metatags.description = 'Write. Own. Earn.'
+  import { metatags } from "@roxi/routify";
+  import Landing from "./Landing.svelte";
+  metatags.title = "BlogChain";
+  metatags.description = "Write. Own. Earn.";
 </script>
 
-<Home/>
+<Landing />

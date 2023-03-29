@@ -1,0 +1,28 @@
+<!-- <script>
+  import { ethers } from "ethers";
+  import { navigate } from 'svelte-routing';
+    let myaddress;
+  async function connectWallet(){
+    await window.ethereum.request({ method: 'eth_requestAccounts' })
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    myaddress = await signer.getAddress();
+    navigate('/');
+  }
+</script>
+
+<center>
+  <div class="header">
+    <h1>BlogChain</h1>
+    <p>Write. Own. Earn.</p>
+  </div>
+
+  <div class="content">
+    <h2>Address</h2>
+    <p>{myaddress}</p>
+  </div>
+
+  <button class="button" on:click={connectWallet} href="/Home"
+    ><span>Connect</span></button
+  >
+</center> -->
