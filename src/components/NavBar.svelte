@@ -1,5 +1,17 @@
+<center>
+  <img src="src/images/top.png" alt="Pic" />
+</center>
+
+<div class="navbar">
+  <a class="button" href="/Home">Home</a>
+  <a class="button" href="/NewArticle">New Article</a>
+  <a class="button" href="/About">About</a>
+</div>
+
 <style>
-  * {box-sizing: border-box}
+  * {
+    box-sizing: border-box;
+  }
 
   .navbar {
     width: 100%;
@@ -21,16 +33,4 @@
   .navbar a:hover {
     background-color: #000;
   }
-
-  h1 {
-    text-align: center;
-  }
 </style>
-
-<h1 text-align:center>Blogchain</h1>
-
-<div class="navbar">
-  <a class="button" href="/Home">Home</a> 
-  <a class="button" href="/NewArticle">New Article</a> 
-  <a class="button" href="/About">About</a>
-</div>

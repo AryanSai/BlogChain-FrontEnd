@@ -1,42 +1,31 @@
 <script>
-    import { navigate } from 'svelte-routing';
-    let myaddress;
-    let isConnected = false;
-    async function connectWallet() {
-      await window.ethereum.request({ method: 'eth_requestAccounts' })
-      if (window.ethereum && window.ethereum.selectedAddress) {
-        myaddress = window.ethereum.selectedAddress;
-        isConnected = true;
-      }else{
-        isConnected = false;
-      }
-      navigate('/Home');
+  import { navigate } from "svelte-routing";
+  let myaddress;
+  let isConnected = false;
+  async function connectWallet() {
+    await window.ethereum.request({ method: "eth_requestAccounts" });
+    if (window.ethereum && window.ethereum.selectedAddress) {
+      myaddress = window.ethereum.selectedAddress;
+      isConnected = true;
+    } else {
+      isConnected = false;
     }
+    navigate("/Home");
+  }
 </script>
-  
+
 <center>
-  <div class="header">
-    <h1>BlogChain</h1>
-    <p>Write. Own. Earn.</p>
-  </div>
-
+  <img src="src/images/cover.png" alt="Pic" style="width:100%;" />
   <div class="content">
-      <p>Please connect your wallet 🦊</p>
+    <p>Please connect your wallet 🦊</p>
   </div>
 
-  <button class="button" on:click={connectWallet} href="/Home" >
-      <span>Connect Wallet</span>
+  <button class="button" on:click={connectWallet} href="/Home">
+    <span>Connect Wallet</span>
   </button>
 </center>
 
 <style>
-  .header {
-    padding: 60px;
-    text-align: center;
-    background: #000000;
-    color: white;
-    font-size: 30px;
-  }
   /* Page Content */
   .content {
     padding: 20px;

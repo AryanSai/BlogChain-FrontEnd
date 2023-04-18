@@ -61,7 +61,7 @@
 </div>
 
 <center>
-  <h3>Trending Articles</h3>
+  <h3>Trending Articles 🔥</h3>
 </center>
 
 {#if len > 0}

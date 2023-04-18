@@ -1,6 +1,29 @@
 <script>
-    import NavBar from "../components/NavBar.svelte";
+  import NavBar from "../components/NavBar.svelte";
 </script>
+
+<NavBar />
+
+<center>
+  <h2 style="text-align:center">Our Team</h2>
+
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img
+          src="src/images/aryan.png"
+          alt="Pic"
+          style="width:300px;height:300px;"
+        />
+      </div>
+      <div class="flip-card-back">
+        <h1>Aryan Sai</h1>
+        <p class="title">Chief Blogger - BlogChain</p>
+        <p class="title">Breaking the chains of convention with blockchain and code!</p>
+      </div>
+    </div>
+  </div>
+</center>
 
 <style>
   .flip-card {
@@ -9,7 +32,34 @@
     height: 300px;
     perspective: 1000px;
   }
-  
+  .title {
+    color: white;
+    font-size: 18px;
+  }
+
+  button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+
+  button:hover,
+  a:hover {
+    opacity: 0.7;
+  }
   .flip-card-inner {
     position: relative;
     width: 100%;
@@ -17,49 +67,30 @@
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
-  
+
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
-  
-  .flip-card-front, .flip-card-back {
+
+  .flip-card-front,
+  .flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  
+
   .flip-card-front {
     background-color: #bbb;
     color: black;
   }
-  
+
   .flip-card-back {
     background-color: #2980b9;
     color: white;
     transform: rotateY(180deg);
   }
 </style>
-
-<NavBar/>
-
-<center>
-  <h2 style="text-align:center">Our Team</h2>
-  
-  <div class="flip-card">
-      <div class="flip-card-inner">
-        <!-- <div class="flip-card-front">
-          <img src="/home/dmacs/Desktop/front_end/src/images/m.jpeg" alt="Pic" style="width:300px;height:300px;">
-        </div> -->
-        <div class="flip-card-back">
-          <h1>Aryan Sai</h1> 
-          <p></p> 
-          <p></p>
-        </div>
-      </div>
-    </div>
-</center>
-  
