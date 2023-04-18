@@ -12,6 +12,11 @@
   * {
     box-sizing: border-box;
   }
+  
+  h1 {
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px rgb(164, 164, 164);
+  }
 
   .navbar {
     width: 100%;
@@ -26,7 +31,7 @@
     color: white;
     text-decoration: none;
     font-size: 17px;
-    width: 33%;
+    width: 33.33%;
     text-align: center;
   }
 

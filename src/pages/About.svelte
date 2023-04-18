@@ -30,6 +30,7 @@
     background-color: transparent;
     width: 300px;
     height: 300px;
+    border-radius: 1000px;
     perspective: 1000px;
   }
   .title {
@@ -65,7 +66,7 @@
   }
 
   .flip-card-back {
-    background-color: #2980b9;
+    background-color: #000306;
     color: white;
     transform: rotateY(180deg);
   }

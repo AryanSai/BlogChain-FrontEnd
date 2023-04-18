@@ -10,7 +10,7 @@
       transition: 0.6s;
       width: 70%;
       padding-left: 10px;
-      border-radius: 0.5rem;
+      border-radius: 18px;
     }
     
     .article:hover {
