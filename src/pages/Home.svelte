@@ -1,3 +1,10 @@
+<style>
+  h3 {
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px rgb(164, 164, 164);
+}
+</style>
+
 <script>
   import { ethers } from "ethers";
   import { abi as blogAbi, address as blogAddress } from "../BlogChain";
@@ -51,14 +58,16 @@
 
 <NavBar />
 
+<br>
 <div style="display: flex; justify-content: space-between;">
   <div>
-    <h4>Address: {myaddress}</h4>
+    <h3>Address: {myaddress}</h3>
   </div>
   <div>
-    <h4>Token Balance: {tokenBalance} BLOG Tokens</h4>
+    <h3>Token Balance: {tokenBalance} BLOG Tokens</h3>
   </div>
 </div>
+<br>
 
 <center>
   <h3>Trending Articles 🔥</h3>

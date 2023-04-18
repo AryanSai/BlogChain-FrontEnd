@@ -1,11 +1,11 @@
 <center>
-  <img src="src/images/top.png" alt="Pic" />
+  <h1>BlogChain</h1>
 </center>
 
 <div class="navbar">
-  <a class="button" href="/Home">Home</a>
-  <a class="button" href="/NewArticle">New Article</a>
-  <a class="button" href="/About">About</a>
+  <a class="button" href="/Home">🔥 Trending</a>
+  <a class="button" href="/NewArticle">🚀 Write</a>
+  <a class="button" href="/About"> 💡 About Us</a>
 </div>
 
 <style>
