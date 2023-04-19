@@ -39,46 +39,45 @@
     //get article count
     articleCount = await blogchaincontract.articleIdCounter();
     articleCount = parseInt(articleCount, 10);
-    //get articles
-    let a = 0;
-    for (var x = 0; x < articleCount; x++) {
-      a = await blogchaincontract.mapGetter(x);
-      data.push(a);
+    //get your articles
+    for (let x = 0; x < articleCount; x++) {
+      const article = await blogchaincontract.mapGetter(x);
+      if (article.writer === myaddress) {
+        data.push(article);
+      }
     }
     len = data.length;
   });
 </script>
 
-<body>
-  <NavBar />
+<NavBar />
 
-  <br />
-  <div style="display: flex; justify-content: space-between;">
-    <div>
-      <h3>Address: {myaddress}</h3>
-    </div>
-    <div>
-      <h3>Token Balance: {tokenBalance} BLOG Tokens</h3>
-    </div>
+<br />
+<div style="display: flex; justify-content: space-between;">
+  <div>
+    <h3>My Address: {myaddress}</h3>
   </div>
-  <br />
+  <div>
+    <h3>My Token Balance: {tokenBalance} BLOG Tokens</h3>
+  </div>
+</div>
+<br />
 
-  <center>
-    <h3>Trending Articles 🔥</h3>
-  </center>
+<center>
+  <h3>My Articles 🔥</h3>
+</center>
 
-  {#if len > 0}
-    {#each data as article}
-      <ArticleCard
-        title={article.title}
-        writer={article.writer}
-        id={article.id}
-      />
-      <br />
-    {/each}
-  {/if}
+{#if len > 0}
+  {#each data as article}
+    <ArticleCard
+      title={article.title}
+      writer={article.writer}
+      id={article.id}
+    />
+    <br />
+  {/each}
+{/if}
 
-</body>
 
 <style>
   h3 {

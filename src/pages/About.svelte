@@ -19,11 +19,16 @@
       <div class="flip-card-back">
         <h1>Aryan Sai</h1>
         <p class="title">Chief Blogger - BlogChain</p>
-        <p class="title">Breaking the chains of convention with blockchain and code!</p>
+        <p class="title">
+          Breaking the chains of convention with blockchain and code!
+        </p>
       </div>
     </div>
   </div>
 </center>
+<div class="footer">
+  <h2>Made with ❤️ in India 🇮🇳</h2>
+</div>
 
 <style>
   .flip-card {
@@ -69,5 +74,18 @@
     background-color: #000306;
     color: white;
     transform: rotateY(180deg);
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background: #000000;
+  }
+  h2 {
+    color: rgb(255, 255, 255);
   }
 </style>

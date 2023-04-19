@@ -4,7 +4,8 @@
 
 <div class="navbar">
   <a class="button" href="/Home">🔥 Trending</a>
-  <a class="button" href="/NewArticle">🚀 Write</a>
+  <a class="button" href="/NewArticle">🖊️ Write</a>
+  <a class="button" href="/MyArticles"> 🚀 My Writings</a>
   <a class="button" href="/About"> 💡 About Us</a>
 </div>
 
@@ -31,7 +32,7 @@
     color: white;
     text-decoration: none;
     font-size: 17px;
-    width: 33.33%;
+    width: 25%;
     text-align: center;
   }
 
