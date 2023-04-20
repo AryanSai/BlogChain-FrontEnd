@@ -31,7 +31,7 @@
   </div>
 </center>
 <div class="footer">
-  <h2>Made with ❤️ in India 🇮🇳</h2>
+  <h2>Built with ❤️ in India 🇮🇳</h2>
 </div>
 
 <style>

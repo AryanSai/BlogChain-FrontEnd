@@ -1,23 +1,29 @@
+<script>
+  export let currentPage;
+</script>
+
 <center>
   <h1>BlogChain</h1>
 </center>
 
 <div class="navbar">
-  <a class="{currentPage === 'Home' ? 'active' : ''}" href="/Home">🔥 Trending</a>
-  <a class="{currentPage === 'NewArticle' ? 'active' : ''}" href="/NewArticle">🖊️ Write & Mint</a>
-  <a class="{currentPage === 'MyArticles' ? 'active' : ''}" href="/MyArticles"> 🚀 My Portfolio</a>
-  <a class="{currentPage === 'About' ? 'active' : ''}" href="/About"> 💡 Our Mission</a>
+  <a class={currentPage === "Home" ? "active" : ""} href="/Home">🔥 Trending</a>
+  <a class={currentPage === "NewArticle" ? "active" : ""} href="/NewArticle"
+    >🖊️ Write & Mint</a
+  >
+  <a class={currentPage === "MyArticles" ? "active" : ""} href="/MyArticles">
+    🚀 My Portfolio</a
+  >
+  <a class={currentPage === "About" ? "active" : ""} href="/About">
+    💡 Our Mission</a
+  >
 </div>
-
-<script>
-  export let currentPage;
-</script>
 
 <style>
   * {
     box-sizing: border-box;
   }
-  
+
   h1 {
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px rgb(164, 164, 164);

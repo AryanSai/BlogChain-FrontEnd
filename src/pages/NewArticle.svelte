@@ -65,7 +65,7 @@
       id="title"
       class="textbox"
       type="text"
-      placeholder="A magical tile!"
+      placeholder="A magical title!"
     />
     <br />
     <br />
@@ -154,11 +154,11 @@
     padding: 2rem;
     border: none;
     border-radius: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     line-height: 1.2;
-    width: 100%;
-    height: 15rem;
-    font-family: "Roboto", sans-serif;
+    width: 98%;
+    height: 18rem;
+    font-family: sans-serif;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     transition: box-shadow 0.3s ease-in-out;
     resize: none;

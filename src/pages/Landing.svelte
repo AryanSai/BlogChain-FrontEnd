@@ -16,12 +16,12 @@
 
 <center>
   <img src="src/images/cover.png" alt="Pic" style="width:100%;" />
-  <div class="content">
-    <p>Please connect your wallet 🦊</p>
-  </div>
-
+  <br />
+  <br />
+  <h3>🙏 Welcome to BlogChain, the decentralised blogging platform. 🌎</h3>
+  <br />
   <button class="button" on:click={connectWallet} href="/Home">
-    <span>Connect Wallet</span>
+    <span>Connect Wallet 🦊</span>
   </button>
 </center>
 
@@ -38,7 +38,7 @@
     text-align: center;
     font-size: 18px;
     padding: 20px;
-    width: 200px;
+    width: 300px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;

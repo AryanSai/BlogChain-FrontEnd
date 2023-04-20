@@ -111,12 +111,11 @@
 
     <br />
     <br />
-    <h5>Tips Earnt: {tipAmount} BLOG Tokens</h5>
-    <h5>Do you like to support the writer?</h5>
+    <h5>Tokens Earnt: {tipAmount} BLOG Tokens</h5>
     <input
       id="tipAmount"
       type="tipAmount"
-      placeholder="Enter the amount"
+      placeholder="Support the writer..."
       onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"
     />
 
