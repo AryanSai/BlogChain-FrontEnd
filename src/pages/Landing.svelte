@@ -27,9 +27,6 @@
 
 <style>
   /* Page Content */
-  .content {
-    padding: 20px;
-  }
   .button {
     border-radius: 4px;
     background-color: #080808;
