@@ -30,7 +30,6 @@
       provider
     );
     tokenBalance = await tokencontract.balanceOf(myaddress);
-
     const blogchaincontract = new ethers.Contract(
       blogAddress,
       blogAbi,
@@ -47,18 +46,19 @@
     }
     len = data.length;
   });
+  let currentPage = "Home";
 </script>
 
 <body>
-  <NavBar />
+  <NavBar {currentPage}/>
 
   <br />
   <div style="display: flex; justify-content: space-between;">
-    <div>
-      <h3>Address: {myaddress}</h3>
+    <div class="chip">
+      🔑 {myaddress}
     </div>
-    <div>
-      <h3>Token Balance: {tokenBalance} BLOG Tokens</h3>
+    <div class="chip">
+      🪙 {tokenBalance} BLOG Tokens
     </div>
   </div>
   <br />
@@ -77,10 +77,19 @@
       <br />
     {/each}
   {/if}
-
 </body>
 
 <style>
+  .chip {
+    display: inline-block;
+    padding: 0 25px;
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    border-radius: 16px;
+    background-color: #000000;
+    color: white;
+  }
   h3 {
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px rgb(164, 164, 164);

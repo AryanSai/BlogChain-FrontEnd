@@ -1,11 +1,15 @@
 <script>
   import NavBar from "../components/NavBar.svelte";
+  let currentPage = 'About';
 </script>
 
-<NavBar />
+<NavBar {currentPage}/>
 
 <center>
-  <h2 style="text-align:center">Our Team</h2>
+  <br>
+  <br>
+  <br>
+  <br>
 
   <div class="flip-card">
     <div class="flip-card-inner">
@@ -37,10 +41,6 @@
     height: 300px;
     border-radius: 1000px;
     perspective: 1000px;
-  }
-  .title {
-    color: white;
-    font-size: 18px;
   }
   .flip-card-inner {
     position: relative;
@@ -80,6 +80,7 @@
     position: fixed;
     left: 0;
     bottom: 0;
+    color: white;
     width: 100%;
     padding: 15px;
     text-align: center;

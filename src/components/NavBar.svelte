@@ -3,11 +3,15 @@
 </center>
 
 <div class="navbar">
-  <a class="button" href="/Home">🔥 Trending</a>
-  <a class="button" href="/NewArticle">🖊️ Write</a>
-  <a class="button" href="/MyArticles"> 🚀 My Writings</a>
-  <a class="button" href="/About"> 💡 About Us</a>
+  <a class="{currentPage === 'Home' ? 'active' : ''}" href="/Home">🔥 Trending</a>
+  <a class="{currentPage === 'NewArticle' ? 'active' : ''}" href="/NewArticle">🖊️ Write & Mint</a>
+  <a class="{currentPage === 'MyArticles' ? 'active' : ''}" href="/MyArticles"> 🚀 My Portfolio</a>
+  <a class="{currentPage === 'About' ? 'active' : ''}" href="/About"> 💡 Our Mission</a>
 </div>
+
+<script>
+  export let currentPage;
+</script>
 
 <style>
   * {
@@ -34,6 +38,10 @@
     font-size: 17px;
     width: 25%;
     text-align: center;
+  }
+
+  .navbar a.active {
+    background-color: #000;
   }
 
   .navbar a:hover {

@@ -42,20 +42,38 @@
       const signer = provider.getSigner();
       const contract = new ethers.Contract(address, abi, signer);
       await contract.publishArticle(fcid, title);
+      on();
     });
+  }
+  let currentPage = "NewArticle";
+  function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+
+  function off() {
+    document.getElementById("overlay").style.display = "none";
   }
 </script>
 
-<NavBar />
+<NavBar {currentPage} />
 
 <form>
   <br />
   <br />
   <center>
-    <input id="title" class="textbox" type="text" placeholder="A magical tile!" />
-    <br>
-    <br>
-    <textarea id="articleBody" class="textarea" placeholder="This is where the magic happens..."></textarea>
+    <input
+      id="title"
+      class="textbox"
+      type="text"
+      placeholder="A magical tile!"
+    />
+    <br />
+    <br />
+    <textarea
+      id="articleBody"
+      class="textarea"
+      placeholder="This is where the magic happens..."
+    />
   </center>
 </form>
 
@@ -63,7 +81,34 @@
   <button class="button" on:click={publish}><span>Mint</span></button>
 </center>
 
+<div id="overlay" on:click={off}>
+  <div id="text">To the Moon! Successfully Minted!</div>
+</div>
+
 <style>
+  #overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  #text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
   .button {
     border-radius: 4px;
     background-color: #080808;
@@ -124,20 +169,20 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 0 0 2px #ffd300;
   }
   .textbox {
-        background-color: #fff;
-        color: #000000;
-        padding: 1.5rem;
-        border: none;
-        border-radius: 0.5rem;
-        font-size: 1.0rem;
-        width: 30%;
-        font-family: 'Roboto', sans-serif;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        transition: box-shadow 0.3s ease-in-out;
-    }
-    
-    .textbox:focus {
-        outline: none;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 0 0 2px #FFD300;
-    }
+    background-color: #fff;
+    color: #000000;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    width: 30%;
+    font-family: "Roboto", sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .textbox:focus {
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 0 0 2px #ffd300;
+  }
 </style>
