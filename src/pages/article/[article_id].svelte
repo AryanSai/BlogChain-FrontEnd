@@ -99,35 +99,37 @@
   }
 </script>
 
-<NavBar />
+<body>
+  <NavBar />
 
-<center>
-  <br />
-  <br />
-  <div class="chipTitle">
-    ⭐ {title}
-  </div>
-  <br />
-  <br />
+  <center>
+    <br />
+    <br />
+    <div class="chipTitle">
+      ⭐ {title}
+    </div>
+    <br />
+    <br />
 
-  <div class="chipAddress">
-    🔑 {writer}
-  </div>
-  <p id="area">{body}</p>
+    <div class="chipAddress">
+      🔑 {writer}
+    </div>
+    <p id="area">{body}</p>
 
-  <br />
-  <br />
-  <h5>Tips Earnt: {tipAmount} BLOG Tokens</h5>
-  <h5>Do you like to support the writer?</h5>
-  <input
-    id="tipAmount"
-    type="tipAmount"
-    placeholder="Enter the amount"
-    onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"
-  />
+    <br />
+    <br />
+    <h5>Tips Earnt: {tipAmount} BLOG Tokens</h5>
+    <h5>Do you like to support the writer?</h5>
+    <input
+      id="tipAmount"
+      type="tipAmount"
+      placeholder="Enter the amount"
+      onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"
+    />
 
-  <button class="button" on:click={tipWriter}><span>Tip</span></button>
-</center>
+    <button class="button" on:click={tipWriter}><span>Tip</span></button>
+  </center>
+</body>
 
 <style>
   .button {
