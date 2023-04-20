@@ -104,16 +104,9 @@
 
   <center>
     <br />
-    <br />
-    <div class="chipTitle">
-      ⭐ {title}
-    </div>
-    <br />
-    <br />
+    <h2>{title}</h2>
+    <h3>🔑 {writer}</h3>
 
-    <div class="chipAddress">
-      🔑 {writer}
-    </div>
     <p id="area">{body}</p>
 
     <br />
@@ -184,25 +177,5 @@
     background-color: #ddd;
     outline: none;
     border-radius: 6px;
-  }
-  .chipTitle {
-    display: inline-block;
-    padding: 0 25px;
-    height: 50px;
-    font-size: 35px;
-    line-height: 50px;
-    border-radius: 16px;
-    background-color: #000000;
-    color: white;
-  }
-  .chipAddress {
-    display: inline-block;
-    padding: 0 25px;
-    height: 50px;
-    font-size: 16px;
-    line-height: 50px;
-    border-radius: 16px;
-    background-color: #000000;
-    color: white;
   }
 </style>
