@@ -18,7 +18,20 @@
   let tipAmount = 0;
   let data = 0;
   let uri = 0;
+  // When the user scrolls the page, execute myFunction
+  window.onscroll = function () {
+    myFunction();
+  };
 
+  function myFunction() {
+    var winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+    var height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
+  }
   onMount(async () => {
     const articleId = $params.article_id;
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -80,7 +93,7 @@
       //modify the tip amount in mirale contract
       await blogchaincontract.tipWriter(articleId, tipAmount);
       showTips();
-      alert("Successfully transferred the tip amount!!");
+      on();
     } else {
       alert("Invalid Input!!");
     }
@@ -97,33 +110,101 @@
     data = await blogchaincontract.mapGetter(articleId);
     tipAmount = data.tipAmount;
   }
+
+  function on() {
+    document.getElementById("overlay").style.display = "block";
+  }
+
+  function off() {
+    document.getElementById("overlay").style.display = "none";
+  }
 </script>
 
 <body>
-  <NavBar />
-
-  <center>
+  <div class="header">
+    <NavBar />
     <br />
-    <h2>{title}</h2>
-    <h3>🔑 {writer}</h3>
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar" />
+    </div>
+  </div>
 
-    <p id="area">{body}</p>
+  <div class="content">
+    <center>
+      <br />
+      <h2>{title}</h2>
+      <h3>🔑 {writer}</h3>
 
-    <br />
-    <br />
-    <h5>Tokens Earnt: {tipAmount} BLOG Tokens</h5>
-    <input
-      id="tipAmount"
-      type="tipAmount"
-      placeholder="Support the writer..."
-      onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"
-    />
+      <p id="area">{body}</p>
 
-    <button class="button" on:click={tipWriter}><span>Tip</span></button>
-  </center>
+      <br />
+      <br />
+      <h5>Tokens Earnt: {tipAmount} BLOG Tokens</h5>
+      <input
+        id="tipAmount"
+        type="tipAmount"
+        placeholder="Support the writer..."
+        onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"
+      />
+
+      <button class="button" on:click={tipWriter}><span>Tip</span></button>
+
+      <div id="overlay" on:click={off}>
+        <div id="text">Successfully tipped the writer!</div>
+      </div>
+    </center>
+  </div>
 </body>
 
 <style>
+  .header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #f1f1f1;
+  }
+  .content {
+    padding: 100px 0;
+    margin: 50px auto 0 auto;
+    width: 80%;
+  }
+  .progress-container {
+    width: 100%;
+    height: 8px;
+    background: #ffffff;
+  }
+
+  .progress-bar {
+    height: 8px;
+    border-radius: 20px;
+    background: #000000;
+    width: 0%;
+  }
+
+  #overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  #text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
   .button {
     border-radius: 4px;
     background-color: #080808;
