@@ -1,16 +1,27 @@
 <script>
   import NavBar from "../components/NavBar.svelte";
-  let currentPage = 'About';
+  let currentPage = "About";
 </script>
 
-<NavBar {currentPage}/>
+<NavBar {currentPage} />
 
 <center>
-  <br>
-  <br>
-  <br>
-  <br>
-
+  <br />
+  <h4>
+    Blogchain's mission is to revolutionize the world of content creation and
+    distribution by empowering writers to take ownership of their work and
+    providing them with a new revenue stream through NFTs and a native token. We
+    aim to create a platform that is transparent, secure, and verifiable, using
+    the Ethereum blockchain to ensure that the ownership of content is fully
+    controlled by the users. Our decentralized approach fosters engagement and
+    collaboration between writers and readers, creating a sense of community
+    that is rare in the traditional model. We believe that by using NFTs and a
+    native token, we can create an economy within the DApp that incentivizes
+    writers to create high-quality content and readers to support their favorite
+    writers. Our ultimate goal is to disrupt the traditional model of content
+    creation and distribution and provide a new paradigm for writers to earn a
+    living from their craft.
+  </h4>
   <div class="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
